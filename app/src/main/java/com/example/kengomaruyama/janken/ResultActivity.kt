@@ -47,5 +47,7 @@ class ResultActivity : AppCompatActivity() {
             1 -> resultLabel.setText(R.string.result_win)
             2 -> resultLabel.setText(R.string.result_lose)
         }
+
+        backButton.setOnClickListener { finish() }
     }
 }
