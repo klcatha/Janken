@@ -36,7 +36,7 @@ class ResultActivity : AppCompatActivity() {
         }
 
         // コンピュータの手を決める
-        val comHand = (Math.random() * 3).toInt()
+        val comHand = getHand()
         when(comHand) {
             gu -> comHandImage.setImageResource(R.drawable.com_gu)
             choki -> comHandImage.setImageResource(R.drawable.com_choki)
@@ -52,6 +52,9 @@ class ResultActivity : AppCompatActivity() {
         }
 
         backButton.setOnClickListener { finish() }
+
+        // じゃんけんの結果を保存する
+        saveData(myHand, comHand, gameResult)
     }
 
     private fun saveData(myHand: Int, comHand: Int, gameResult: Int) {
